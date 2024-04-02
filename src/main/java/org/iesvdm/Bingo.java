@@ -190,31 +190,17 @@ public class Bingo {
      * Marca los espacios en blanco con el valor -1
      * @param arrayBi
      */
-    static void ponerBlancos(int[][] arrayBi)
-    {
-
-        for (int i = 0; i < arrayBi[0].length; i++) // Recorre las 3 filas
-        {
-
-            for (int j=0; j<4; j++) // Genera 4 randoms por cada fila
-            {
-                boolean estaEnLaFila = true;
-                boolean hay2blancos = true;
-                do
-                {
-                    int posicionAleatoria = (int)(Math.random()*9);
-
-                    estaEnLaFila = buscarFila(arrayBi, i, posicionAleatoria); // Devuelve si ya hay -1 en esa posicion
-                    hay2blancos = buscarColumna(arrayBi, posicionAleatoria); // Devuelve si hay dos -1 en ese array
-
-                    if(!estaEnLaFila && !hay2blancos)
-                    {
-                        arrayBi[posicionAleatoria][i] = -1;
-                    }
-
-                }while(estaEnLaFila || hay2blancos);
+    static void ponerBlancos(int[][] arrayBi) {
+        for (int i = 0; i < arrayBi[0].length; i++) {
+            int blancosEnColumna = 0;
+            for (int j = 0; j < arrayBi.length; j++) {
+                if (blancosEnColumna < 2 && Math.random() < 0.5) {
+                    // Pone blanco en la posición actual
+                    arrayBi[j][i] = -1;
+                    // Aumenta el contador de espacios en blancos
+                    blancosEnColumna++;
+                }
             }
-
         }
     }
 
