@@ -172,15 +172,15 @@ public void testPartirPor_PosicionesFueraDeRango() {
 
 @Test
 public void testSonIguales() {
-    int[] array1 = {1, 2, 3, 4, 5};
-    int[] array2 = {1, 2, 3, 4, 5};
-    assertTrue(UtilesArrays.sonIguales(array1, array2)); // Comparación de arrays completos
+    int[] array1 = {5,8,1,7,3};
+    int[] array2 = {5,8,1,7,3};
+    assertTrue(UtilesArrays.sonIguales(array1, array2));
 }
 
 @Test
-public void testSonIguales_DiferentesLongitudes() {
-    int[] array1 = {1, 2, 3, 4, 5};
-    int[] array2 = {1, 2, 3};
+public void testSonIguales_DiferentesTamanios() {
+    int[] array1 = {5,8,1,7,1,2};
+    int[] array2 = {5,8,1,7};
     assertFalse(UtilesArrays.sonIguales(array1, array2));
 }
 
@@ -193,8 +193,8 @@ public void testSonIguales_DiferentesElementos() {
 
 @Test
 public void testElementosIguales() {
-    int[] array1 = {1, 2, 3, 4, 5};
-    int[] array2 = {1, 2, 3, 4, 5};
+    int[] array1 = {5,8,1,7,3};
+    int[] array2 = {5,8,1,7,3};
     assertTrue(UtilesArrays.elementosIguales(array1, array2, 2)); // Elementos en la posición 2 son iguales
 }
 

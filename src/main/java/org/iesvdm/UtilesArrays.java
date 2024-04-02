@@ -361,7 +361,7 @@ public class UtilesArrays {
             }
 
             // Si el contador ha llegado a la ultima posición es que son iguales
-            if (index == array1.length - 1) {
+            if (index == array1.length) {
                 iguales = true;
             }
         }
